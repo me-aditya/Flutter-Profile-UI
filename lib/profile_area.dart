@@ -4,7 +4,7 @@ import 'package:profile_ui/details_page.dart';
 
 class ProfileArea extends StatelessWidget {
   ProfileArea(
-      {this.name, this.collegeName, this.likes, this.location, this.color});
+      {this.name, this.collegeName, this.likes, this.location, this.color,this.imageUrl});
 
   final String name;
   final String collegeName;
@@ -12,6 +12,7 @@ class ProfileArea extends StatelessWidget {
   final String location;
   //final String websiteName;
   final Color color;
+  final imageUrl ;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +34,20 @@ class ProfileArea extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                Positioned(
+                  top: 20.0,
+                  child: Container(
+                    width: 100.0,
+                    height: 100.0,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image : DecorationImage(
+                        fit: BoxFit.fill,
+                        image : NetworkImage(imageUrl),
+                      ) ,
+                    )
+                  ),
+                ),
                 SizedBox(height: 20.0),
                 Text(
                   name,
