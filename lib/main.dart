@@ -32,10 +32,17 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child : Column(children:<Widget> [
-        Text("Aditya Rathi")
-      ],),
+    return Scaffold(
+      body: Column(
+        children: <Widget>[
+          Text(
+            "Aditya Rathi",
+            style: TextStyle(
+              color: Colors.black,
+            ),
+          )
+        ],
+      ),
     );
   }
 }
