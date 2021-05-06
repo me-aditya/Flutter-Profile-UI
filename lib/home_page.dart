@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:profile_ui/profile_data.dart';
 
 class MyHomePage extends StatefulWidget {
+  static String id = "home_page";
+  
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }

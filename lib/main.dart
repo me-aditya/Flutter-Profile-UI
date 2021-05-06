@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:profile_ui/details_page.dart';
 
 import 'home_page.dart';
 
@@ -15,13 +16,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      initialRoute: MyHomePage.id,
+      routes: {
+        MyHomePage.id: (context) => MyHomePage(),
+        DetailsPage.id: (context) => DetailsPage("Aditya"),
+      },
     );
   }
 }
-
-
-
-
-
-
