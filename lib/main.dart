@@ -43,10 +43,41 @@ class _MyHomePageState extends State<MyHomePage> {
       body: ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[
-          ProfileArea(),
-          ProfileArea(),
-          ProfileArea(),
-          ProfileArea(),
+          ProfileArea(
+            name: "Aditya Rathi",
+            collegeName: "BITS-Pilani,Goa",
+            likes: 20,
+            color: Colors.blue[900],
+            location: "Goa",
+          ),
+          ProfileArea(
+            name: "Himanshu Mahalle",
+            collegeName: "IIIT , Pune",
+            likes: 21,
+            color: Colors.orange,
+            location: "Pune",
+          ),
+          ProfileArea(
+            name: "Omkar Shitole",
+            collegeName: "BITS-Pilani,Goa",
+            likes: 23,
+            color: Colors.pink,
+            location: "Germany",
+          ),
+          ProfileArea(
+            name: "Vedant Gujar",
+            collegeName: "BITS-Pilani,Goa",
+            likes: 300,
+            color: Colors.green,
+            location: "Nashik",
+          ),
+          ProfileArea(
+            name: "Ankit Anand",
+            collegeName: "BITS-Pilani,Goa",
+            likes: 19,
+            color: Colors.cyan,
+            location: "Bihar",
+          ),
         ],
       ),
     );
@@ -54,6 +85,16 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class ProfileArea extends StatelessWidget {
+  ProfileArea(
+      {this.name, this.collegeName, this.likes, this.location, this.color});
+
+  final String name;
+  final String collegeName;
+  final int likes;
+  final String location;
+  //final String websiteName;
+  final Color color;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -64,29 +105,30 @@ class ProfileArea extends StatelessWidget {
           height: 350.0,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
-            color: Color(0xFF5A348B),
-            gradient:
-                LinearGradient(colors: [Color(0xFF5A348B), Color(0xFF5A348B)]),
+            color: color,
+            gradient: LinearGradient(colors: [color, Colors.pinkAccent]),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              SizedBox(height: 20.0),
               Text(
-                "Aditya Rathi",
+                name,
                 style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16.0,
+                  color: Colors.white,
+                  fontSize: 20.0,
                   fontWeight: FontWeight.w600,
                 ),
               ),
               SizedBox(height: 20.0),
               Text(
-                "BITS-Pilani,Goa",
+                collegeName,
                 style: TextStyle(
-                  fontSize: 14.0,
+                  fontSize: 16.0,
                   color: Colors.orange,
                 ),
               ),
+              SizedBox(height: 20.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -95,20 +137,36 @@ class ProfileArea extends StatelessWidget {
                         FontAwesomeIcons.map,
                       ),
                       onPressed: () {}),
-                  Text("Goa"),
+                  Text(
+                    location,
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
                   SizedBox(width: 20.0),
                   IconButton(
                       icon: FaIcon(FontAwesomeIcons.heart, color: Colors.red),
                       onPressed: () {}),
-                  Text("20.3k"),
+                  Text(
+                    "${likes}k",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   IconButton(
-                      icon: FaIcon(FontAwesomeIcons.weibo), onPressed: () {}),
-                  Text("https://www.adityarathi.com"),
+                      icon: FaIcon(FontAwesomeIcons.addressBook),
+                      onPressed: () {}),
+                  Text(
+                    "https://www.adityarathi.com",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
                 ],
               ),
               Row(
